@@ -1,3 +1,3 @@
 #!/bin/bash
 
-export GOLLYX_PSEUDO_PELICAN_HOME="${HOME}/golly/gollyx-pseudo-pelican"
+export GOLLYX_HELLMOUTH_PELICAN_HOME="${HOME}/golly/gollyx-hellmouth-pelican"
