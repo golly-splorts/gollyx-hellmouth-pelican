@@ -6,12 +6,12 @@ set -euo pipefail
 GH_URL="ch4zm.github.com"
 DRY_RUN=""
 
-if [ -z ${GOLLYX_PELICAN_HOME+x} ]; then
-	echo 'You must set the $GOLLYX_PELICAN_HOME environment variable to proceed.'
+if [ -z ${GOLLYX_HELLMOUTH_PELICAN_HOME+x} ]; then
+	echo 'You must set the $GOLLYX_HELLMOUTH_PELICAN_HOME environment variable to proceed.'
     echo 'Try sourcing environment.{STAGE}'
 	exit 1
 else 
-	echo "\$GOLLYX_PELICAN_HOME is set to '$GOLLYX_PELICAN_HOME'"
+	echo "\$GOLLYX_HELLMOUTH_PELICAN_HOME is set to '$GOLLYX_HELLMOUTH_PELICAN_HOME'"
 fi
 
 if [ -z ${GOLLYX_STAGE+x} ]; then
@@ -57,7 +57,7 @@ esac
 echo "Cloning repo ${GH_URL}/golly-splorts/${REPO}"
 
 (
-cd ${GOLLYX_PELICAN_HOME}/pelican
+cd ${GOLLYX_HELLMOUTH_PELICAN_HOME}/pelican
 rm -fr output
 git clone -b gh-pages git@${GH_URL}:golly-splorts/${REPO}.git output
 
