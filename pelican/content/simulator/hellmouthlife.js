@@ -372,7 +372,7 @@
         var cols = this.getColsFromUrlSafely();
 
         // Load a random map from the /map API endpoint
-        let url = this.mapsApiUrl + '/map/pseudo/' + this.patternName + '/r/' + this.getRowsFromUrlSafely() + '/c/' + this.getColsFromUrlSafely();
+        let url = this.mapsApiUrl + '/map/hellmouth/' + this.patternName + '/r/' + this.getRowsFromUrlSafely() + '/c/' + this.getColsFromUrlSafely();
         fetch(url)
         .then(res => res.json())
         .then((mapApiResult) => {
@@ -384,7 +384,7 @@
 
           // Set the game title
           var gameTitleElem = document.getElementById('golly-game-title');
-          gameTitleElem.innerHTML = "Pseudo Cup Map: " + mapApiResult.mapName;
+          gameTitleElem.innerHTML = "Hellmouth Cup Map: " + mapApiResult.mapName;
 
           this.setTeamNames();
           this.setColors();
@@ -1727,8 +1727,8 @@
             // // // pseudo life (good)
             // if ((neighbors===2)||(neighbors===3)||(neighbors===8)) {
 
-            // // pseudo life (good)
-            if ((neighbors===2)||(neighbors===3)||(neighbors===8)) {
+            // conway's life
+            if (!(neighbors === 0 || neighbors === 1 || neighbors > 3)) {
 
               this.addCell(x, y, newState);
               if (color==1) {
@@ -1772,8 +1772,8 @@
           // // // pseudo life (good)
           // if ((allDeadNeighbors[key]==3)||(allDeadNeighbors[key]==5)||(allDeadNeighbors[key]==7)) {
 
-          // // pseudo life (good)
-          if ((allDeadNeighbors[key]==3)||(allDeadNeighbors[key]==5)||(allDeadNeighbors[key]==7)) {
+          // conway's life
+          if (allDeadNeighbors[key] === 3) {
 
             // This cell is dead, but has enough neighbors
             // that are alive that it will make new life.

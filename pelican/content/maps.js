@@ -81,7 +81,7 @@
         this.loading(false);
         var mapRowElem = document.getElementById('row-maps');
 
-        let mapsUrl = this.mapsApiUrl + '/maps/pseudo/' + this.season0;
+        let mapsUrl = this.mapsApiUrl + '/maps/hellmouth/' + this.season0;
         fetch(mapsUrl)
         .then(res => res.json())
         .then((mapsApiResult) => {

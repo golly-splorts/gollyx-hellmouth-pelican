@@ -797,10 +797,10 @@
         } else if(mode==23) {
 
           ////////////////////////////
-          // Pseudo Cup Series
+          // Hellmouth Cup Series
           // Scheduled
 
-          // Pseudo Cup has no league, single-column
+          // Hellmouth Cup has no league, single-column
           var leagueContainerElem = document.getElementById('hcs-league-waiting-container');
           for (let g in currGamesApiResult) {
             var game = currGamesApiResult[g];
@@ -1082,7 +1082,7 @@
         } else if (mode==33) {
 
           ////////////////////////////
-          // Pseudo Cup Series
+          // Hellmouth Cup Series
           // In progress
 
           // HCS has no league, single-column
