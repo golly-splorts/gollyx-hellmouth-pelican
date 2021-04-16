@@ -62,8 +62,8 @@ TEMPLATE_PAGES['maps.js'] = 'maps.js'
 THEME_TEMPLATES_OVERRIDES = []
 
 THEME_TEMPLATES_OVERRIDES.append('simulator')
-TEMPLATE_PAGES['simulator/pseudolife.html'] = 'simulator/index.html'
-TEMPLATE_PAGES['simulator/pseudolife.js']   = 'simulator/pseudolife.js'
+TEMPLATE_PAGES['simulator/hellmouthlife.html'] = 'simulator/index.html'
+TEMPLATE_PAGES['simulator/hellmouthlife.js']   = 'simulator/hellmouthlife.js'
 
 # minilife app is used on multiple pages,
 # so it lives in golly-pelican-theme
