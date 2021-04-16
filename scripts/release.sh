@@ -5,8 +5,8 @@ set -x
 
 REMOTE="ghx"
 
-if [ -z "${GOLLYX_PSEUDO_PELICAN_HOME}" ]; then
-	echo 'You must set the $GOLLYX_PSEUDO_PELICAN_HOME environment variable to proceed.'
+if [ -z "${GOLLYX_HELLMOUTH_PELICAN_HOME}" ]; then
+	echo 'You must set the $GOLLYX_HELLMOUTH_PELICAN_HOME environment variable to proceed.'
 	exit 1
 fi
 
@@ -93,10 +93,10 @@ git tag $RELEASE_TAG
 git push --force $REMOTE $PROMOTE_DEST_BRANCH
 git push --tags $REMOTE
 
-if [[ -e "${GOLLYX_PSEUDO_PELICAN_HOME}/environment.${PROMOTE_DEST_BRANCH}" ]]; then
-    source "${GOLLYX_PSEUDO_PELICAN_HOME}/environment.${PROMOTE_DEST_BRANCH}"
-    make -C "$GOLLYX_PSEUDO_PELICAN_HOME" deploy
+if [[ -e "${GOLLYX_HELLMOUTH_PELICAN_HOME}/environment.${PROMOTE_DEST_BRANCH}" ]]; then
+    source "${GOLLYX_HELLMOUTH_PELICAN_HOME}/environment.${PROMOTE_DEST_BRANCH}"
+    make -C "$GOLLYX_HELLMOUTH_PELICAN_HOME" deploy
 else
-    echo "Could not find environment config file ${GOLLYX_PSEUDO_PELICAN_HOME}/environment.${PROMOTE_DEST_BRANCH}. Unable to deploy."
+    echo "Could not find environment config file ${GOLLYX_HELLMOUTH_PELICAN_HOME}/environment.${PROMOTE_DEST_BRANCH}. Unable to deploy."
 fi
 
