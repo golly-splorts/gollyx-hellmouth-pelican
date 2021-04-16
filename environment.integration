@@ -1,9 +1,9 @@
 #!/bin/bash
 
-export GOLLYX_HELLMOUTH_PELICAN_HOME="${HOME}/golly/gollyx-pelican"
+export GOLLYX_HELLMOUTH_PELICAN_HOME="${HOME}/golly/gollyx-hellmouth-pelican"
 export GOLLYX_STAGE="integration"
 
 export GOLLYX_TLD="golly456.life"
-export GOLLYX_BASE_UI="https://hellmouth.integration.${GOLLY_TLD}"
-export GOLLYX_BASE_API="https://cloud.hellmouth.${GOLLY_TLD}"
-export GOLLYX_MAPS_API="https://maps.${GOLLY_TLD}"
+export GOLLYX_BASE_UI="https://hellmouth.integration.${GOLLYX_TLD}"
+export GOLLYX_BASE_API="https://cloud.hellmouth.${GOLLYX_TLD}"
+export GOLLYX_MAPS_API="https://maps.${GOLLYX_TLD}"
