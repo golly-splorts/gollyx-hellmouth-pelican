@@ -15,8 +15,8 @@
 
 (function () {
 
-  //var realBackgroundColor = "#272b30";
-  var realBackgroundColor = "#060606";
+  var realBackgroundColor = "#272b30";
+  //var realBackgroundColor = "#060606";
   var gridStrokeColor1    = "#3a3a3a";
   var mapZoneStrokeColor  = "#dddddd";
   var grays = ["#3a3a3a", "#404040"];
@@ -25,7 +25,7 @@
 
     baseApiUrl : getBaseApiUrl(),
     baseUIUrl : getBaseUIUrl(),
-    mapsApiUrl : 'https://maps.golly456.life',
+    mapsApiUrl : getMapsApiUrl(),
 
     // this may duplicate / between the base url and simulator
     baseSimulatorUrl : getBaseUIUrl() + '/simulator/index.html',
@@ -65,6 +65,10 @@
 
       schemes : [
         {
+          alive: ['#ffc20a', '#0c7bdc'],
+          alive_labels: ['Yellow', 'Blue']
+        },
+        {
           alive: ['#e66100', '#9963ab'],
           alive_labels: ['Orange', 'Purple']
         },
@@ -75,10 +79,6 @@
         {
           alive: ['#1a85ff', '#d41159'],
           alive_labels: ['Blue', 'Pink']
-        },
-        {
-          alive: ['#ffc20a', '#0c7bdc'],
-          alive_labels: ['Yellow', 'Blue']
         },
         {
           alive: ['#fefe62', '#d35fb7'],
