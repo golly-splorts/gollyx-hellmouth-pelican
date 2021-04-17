@@ -71,8 +71,9 @@ TEMPLATE_PAGES['simulator/hellmouthlife.js']   = 'simulator/hellmouthlife.js'
 # These two env vars are used via Jinja in golly-pelican-theme (header.html) to set API/UI base URLs.
 # If they are empty strings, we use Javscript to deduce the base UI URL,
 # and insert "api." beteen the protocol and base URL to get the API URL.
-GOLLY_BASE_UI = os.environ.get('GOLLYX_BASE_UI', '')
-GOLLY_BASE_API = os.environ.get('GOLLYX_BASE_API', '')
+GOLLYX_BASE_UI = os.environ.get('GOLLYX_BASE_UI', '')
+GOLLYX_BASE_API = os.environ.get('GOLLYX_BASE_API', '')
+GOLLYX_MAPS_API = os.environ.get('GOLLYX_BASE_API', '')
 
 
 # --------------------
