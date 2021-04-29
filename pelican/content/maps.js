@@ -4,7 +4,7 @@
 
     baseApiUrl : getBaseApiUrl(),
     baseUIUrl : getBaseUIUrl(),
-    mapsApiUrl : 'https://maps.golly456.life',
+    mapsApiUrl : getMapsApiUrl(),
 
     loadingElem : null,
 
