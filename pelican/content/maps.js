@@ -65,19 +65,18 @@
      */
     populateMapCards : function() {
 
-      // // get current day/season info from API /today
-      // let url = this.baseApiUrl + '/mode';
-      // fetch(url)
-      // .then(res => res.json())
-      // .then((modeApiResult) => {
+      // get current day/season info from API /today
+      let url = this.baseApiUrl + '/mode';
+      fetch(url)
+      .then(res => res.json())
+      .then((modeApiResult) => {
 
-        // if (!modeApiResult.hasOwnProperty('season')) {
-        //   throw "Could not find required property (season) in API /mode response";
-        // } else {
-        //   this.season0 = modeApiResult.season;
-        // }
+        if (!modeApiResult.hasOwnProperty('season')) {
+          throw "Could not find required property (season) in API /mode response";
+        } else {
+          this.season0 = modeApiResult.season;
+        }
 
-        this.season0 = 0;
         this.loading(false);
         var mapRowElem = document.getElementById('row-maps');
 
@@ -189,12 +188,12 @@
           this.error(-1);
         }); // end API /maps
 
-      // })
-      // .catch(err => {
-      //   console.log("Encountered an error calling the /mode API endpoint");
-      //   console.log(err);
-      //   this.error(-1);
-      // });
+      })
+      .catch(err => {
+        console.log("Encountered an error calling the /mode API endpoint");
+        console.log(err);
+        this.error(-1);
+      });
 
     },
 
