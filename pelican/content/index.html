@@ -1,34 +1,61 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<template id="minilife-template">
-  {% include "minilife.html" %}
-</template>
 
+<div class="container" id="container-maps">
 
-<div class="container">
+  <div id="row-maps" class="row">
 
-    <div class="row text-center landing-header justify-content-lg-center">
-      <div class="col-md-12">
-        <h1>The Hellmouth Cup has been retired after 24 seasons!</h1>
-        <h3>Golly lives on: check out the Pseudo Cup and the Toroidal Cup</h3>
-        <h3>Tuesday, Wednesday, Thursday: <a href="https://pseudo.golly.life">The Pseudo Cup @ pseudo.golly.life</a></h3>
-        <h3>Friday, Saturday, Sunday: <a href="https://toroidal.golly.life">The Toroidal Cup @ toroidal.golly.life</a></h3>
+    <div class="col-md-3 map-card-container">
+
+      <div class="card text-white bg-primary mb-3 map-card">
+        <div class="card-header map-card-header"><span class="map-card-map-name">Hellmouth Cup</span></div>
+        <div class="card-body">
+          <img class="map-card-image" width="100%" src="img/hellmouthcup.png" />
+          <p class="card-text map-card-description-text"><span class="map-card-description"></span></p>
+        </div>
+        <div class="map-card-simulate justify-content-lg-center text-center">
+          <a href="https://hellmouth.golly.life" role="button" class="btn btn-primary btn-sm btn-success">
+            hellmouth.golly.life
+          </a>
+        </div>
       </div>
-    </div>
 
-    <div class="row justify-content-lg-center flipdown-clock">
-      <div id="flipdown" class="flipdown"></div>
     </div>
+    <div class="col-md-3 map-card-container">
 
-    <div class="row text-center landing-header">
-      <div class="col-md-12">
-        <p>The last season is over. While you're deciding what to do next, here is a Game of Life simulator. Click to turn cells on and off!</p>
+      <div class="card text-white bg-primary mb-3 map-card">
+        <div class="card-header map-card-header"><span class="map-card-map-name">Pseudo Cup</span></div>
+        <div class="card-body">
+          <img class="map-card-image" width="100%" src="img/pseudocup.png" />
+          <p class="card-text map-card-description-text"><span class="map-card-description"></span></p>
+        </div>
+        <div class="map-card-simulate justify-content-lg-center text-center">
+          <a href="https://pseudo.golly.life" role="button" class="btn btn-primary btn-sm btn-success">
+            pseudo.golly.life
+          </a>
+        </div>
       </div>
+
+    </div>
+    <div class="col-md-3 map-card-container">
+
+      <div class="card text-white bg-primary mb-3 map-card">
+        <div class="card-header map-card-header"><span class="map-card-map-name">Toroidal Cup</span></div>
+        <div class="card-body">
+          <img class="map-card-image" width="100%" src="img/toroidalcup.png" />
+          <p class="card-text map-card-description-text"><span class="map-card-description"></span></p>
+        </div>
+        <div class="map-card-simulate justify-content-lg-center text-center">
+          <a href="https://toroidal.golly.life" role="button" class="btn btn-primary btn-sm btn-success">
+            toroidal.golly.life
+          </a>
+        </div>
+      </div>
+
     </div>
 
-    <div class="minilife" id="minilife-player">
-    </div>
+  </div>
 
 </div>
 
@@ -43,8 +70,7 @@
 </noscript>
 
 {% endblock %}
+{% block css %}
+{% endblock %}
 {% block javascript %}
-  <script type="text/javascript" src="{{ SITEURL }}/theme/js/json-sans-eval.js"></script>
-  <script type="text/javascript" src="{{ SITEURL }}/theme/js/minilife_core.js"></script>
-  <script type="text/javascript" src="index.js"></script>
 {% endblock %}
