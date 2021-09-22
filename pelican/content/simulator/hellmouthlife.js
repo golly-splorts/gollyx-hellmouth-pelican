@@ -227,6 +227,7 @@
       } else if (this.patternName != null) {
         // Map mode with map overlay
         this.mapMode = true;
+        this.sandboxMode = true;
         this.grid.mapOverlay = true;
 
       } else if (this.random == 1) {
@@ -304,11 +305,11 @@
           var gameTitleElem = document.getElementById('golly-game-title');
           if (gameApiResult.isPostseason == true) {
             var sp1 = gameApiResult.season + 1;
-            gameTitleElem.innerHTML = "Golly: " + gameApiResult.description + " <small>- S" + sp1 + "</small>";
+            gameTitleElem.innerHTML = "Hellmouth Cup: " + gameApiResult.description + " <small>- S" + sp1 + "</small>";
           } else {
             var sp1 = gameApiResult.season + 1;
             var dp1 = gameApiResult.day + 1;
-            var descr = "Golly: Season " + sp1 + " Day " + dp1;
+            var descr = "Hellmouth Season " + sp1 + " Day " + dp1;
             gameTitleElem.innerHTML = descr;
           }
 
@@ -338,7 +339,9 @@
           this.initialState2 = this.gameApiResult.initialConditions2;
           this.columns = this.gameApiResult.columns;
           this.rows = this.gameApiResult.rows;
-          this.cellSize = this.gameApiResult.cellSize;
+          // Manual override
+          //this.cellSize = this.gameApiResult.cellSize;
+          this.cellSize = 6;
           this.mapName = this.gameApiResult.mapName;
           this.mapZone1Name = this.gameApiResult.mapZone1Name;
           this.mapZone2Name = this.gameApiResult.mapZone2Name;
@@ -384,7 +387,7 @@
 
           // Set the game title
           var gameTitleElem = document.getElementById('golly-game-title');
-          gameTitleElem.innerHTML = "Hellmouth Cup Map: " + mapApiResult.mapName;
+          gameTitleElem.innerHTML = "Hellmouth Map: " + mapApiResult.mapName;
 
           this.setTeamNames();
           this.setColors();
@@ -394,7 +397,9 @@
           this.initialState2 = mapApiResult.initialConditions2;
           this.columns = mapApiResult.columns;
           this.rows = mapApiResult.rows;
-          this.cellSize = mapApiResult.cellSize;
+          // Manual override
+          //this.cellSize = mapApiResult.cellSize;
+          this.cellSize = 6;
 
           this.mapName = mapApiResult.mapName;
           this.mapZone1Name = mapApiResult.mapZone1Name;
@@ -434,7 +439,7 @@
 
           // Set the game title
           var gameTitleElem = document.getElementById('golly-game-title');
-          gameTitleElem.innerHTML = "Golly Random Pattern";
+          gameTitleElem.innerHTML = "Hellmouth Random Pattern";
 
         } else if ((this.s1user != null) || (this.s2user != null)) {
           if (this.s1user != null) {
@@ -458,7 +463,7 @@
 
           // Set the game title
           var gameTitleElem = document.getElementById('golly-game-title');
-          gameTitleElem.innerHTML = "Golly Sandbox";
+          gameTitleElem.innerHTML = "Hellmouth Sandbox";
 
         }
 
@@ -708,7 +713,7 @@
       // if invalid or not specified
       cellSize = parseInt(this.helpers.getUrlParameter('cellSize'));
       if (isNaN(cellSize) || cellSize < 1 || cellSize > 10) {
-        cellSize = 7;
+        cellSize = 6;
       }
       if (cellSize <= 5) {
         // Turn off the grid
@@ -1196,7 +1201,7 @@
        * (sandbox mode only)
        */
       canvasMouseMove : function(event) {
-        if (GOL.sandboxMode === true || GOL.mapMode === true) {
+        if (GOL.sandboxMode === true) {
           if (GOL.handlers.mouseDown) {
             var position = GOL.helpers.mousePosition(event);
             if ((position[0] !== GOL.handlers.lastX) || (position[1] !== GOL.handlers.lastY)) {
@@ -2210,7 +2215,6 @@
 
         for (i = 0; i < state.length; i++) {
           if (state[i][0] === y) {
-
             if (state[i].length === 2) { // Remove all Row
               state.splice(i, 1);
             } else { // Remove Element
