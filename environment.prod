@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export GOLLYX_HELLMOUTH_PELICAN_HOME="${HOME}/golly/gollyx-hellmouth-pelican"
+export GOLLYX_HELLMOUTH_PELICAN_HOME="${HOME}/golly/pelican/gollyx-hellmouth-pelican"
 export GOLLYX_STAGE="prod"
 
 export GOLLYX_TLD="golly.life"
